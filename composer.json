@@ -1,0 +1,17 @@
+{
+    "name": "padosoft/laravel-iam-bridge-spatie-permission",
+    "description": "Bridge di migrazione da spatie/laravel-permission a Laravel IAM: scan, manifest generation, shadow mode, decision diffing, cutover, rollback.",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^8.3",
+        "padosoft/laravel-iam-contracts": "*",
+        "padosoft/laravel-iam-server": "*",
+        "spatie/laravel-package-tools": "^1.16",
+        "spatie/laravel-permission": "^6.0"
+    },
+    "autoload": { "psr-4": { "Padosoft\\Iam\\Bridge\\Spatie\\": "src/" } },
+    "extra": { "branch-alias": { "dev-main": "0.1-dev" } },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

@@ -1,0 +1,36 @@
+{
+  "title": "Laravel IAM — Spatie Bridge",
+  "description": "Zero-downtime migration from spatie/laravel-permission to Laravel IAM: scan, manifest generation, shadow mode, decision diffing, cutover and rollback.",
+  "url": "https://padosoft.github.io/laravel-iam-bridge-spatie-permission",
+  "src": "docs",
+  "out": "site",
+  "base": "/",
+  "layout": {
+    "spa": true,
+    "header": { "enabled": true },
+    "sidebar": { "enabled": true, "collapsible": true, "position": "left" },
+    "footer": { "style": "minimal", "content": "MIT © Padosoft — part of the Laravel IAM ecosystem", "branding": true }
+  },
+  "optionsMenu": {
+    "position": "header",
+    "components": { "search": true, "themeSwitch": true }
+  },
+  "theme": {
+    "name": "default",
+    "appearance": "dark",
+    "customCss": []
+  },
+  "navigation": [
+    { "text": "Home", "url": "/" },
+    { "text": "Getting started", "url": "/getting-started" },
+    { "text": "Concepts", "url": "/concepts" },
+    { "text": "Migration runbook", "url": "/migration-runbook" },
+    { "text": "Reference", "url": "/reference" }
+  ],
+  "plugins": {
+    "search": {},
+    "seo": { "titleTemplate": "%s | Laravel IAM Spatie Bridge" },
+    "sitemap": { "url": "https://padosoft.github.io/laravel-iam-bridge-spatie-permission" },
+    "git": { "repo": "https://github.com/padosoft/laravel-iam-bridge-spatie-permission", "branch": "main", "editLink": true, "lastUpdated": true }
+  }
+}

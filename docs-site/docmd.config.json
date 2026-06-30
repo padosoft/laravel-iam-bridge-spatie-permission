@@ -1,0 +1,153 @@
+{
+  "title": "laravel-iam-bridge-spatie-permission",
+  "description": "Bridge di migrazione da spatie/laravel-permission a Laravel IAM: SpatieScanner (DB read-only), ManifestGenerator (manifest v2 valido), comandi iam:spatie:scan / iam:spatie:manifest, ShadowGate (decision diffing via Gate::after), shadow mode, cutover, rollback.",
+  "url": "https://doc.laravel-iam-bridge-spatie-permission.padosoft.com",
+  "src": "docs",
+  "out": "_site",
+  "base": "/",
+
+  "favicon": "assets/favicon.svg",
+  "theme": {
+    "name": "default",
+    "defaultMode": "dark",
+    "customCss": ["assets/custom.css"]
+  },
+
+  "autoTitleFromH1": true,
+  "copyCode": true,
+  "pageNavigation": true,
+  "minify": true,
+  "markdown": { "breaks": true },
+
+  "layout": {
+    "spa": true,
+    "header": { "enabled": true },
+    "sidebar": { "collapsible": true, "defaultCollapsed": false },
+    "optionsMenu": {
+      "position": "header",
+      "components": { "search": true, "themeSwitch": true }
+    }
+  },
+
+  "navigation": [
+    {
+      "title": "Get Started",
+      "icon": "rocket",
+      "children": [
+        { "title": "Introduction", "path": "/" },
+        { "title": "Quickstart", "path": "/quickstart" },
+        { "title": "Installation", "path": "/installation" },
+        { "title": "Core concepts", "path": "/core-concepts" }
+      ]
+    },
+    {
+      "title": "Guides",
+      "icon": "book-open",
+      "children": [
+        { "title": "Inventory & scan", "path": "/guides/inventory-and-scan" },
+        { "title": "Manifest generation", "path": "/guides/manifest-generation" },
+        { "title": "Shadow mode", "path": "/guides/shadow-mode" },
+        { "title": "Reviewing mismatches", "path": "/guides/reviewing-mismatches" },
+        { "title": "Cutover & rollback", "path": "/guides/cutover-and-rollback" }
+      ]
+    },
+    {
+      "title": "Concetti & Teoria",
+      "icon": "square-function",
+      "children": [
+        { "title": "Permission slugging", "path": "/concepts/permission-slugging" },
+        { "title": "Decision diffing & deny-overrides", "path": "/concepts/decision-diffing" },
+        { "title": "Shadow before cutover", "path": "/concepts/shadow-before-cutover" }
+      ]
+    },
+    {
+      "title": "Architettura",
+      "icon": "workflow",
+      "children": [
+        { "title": "Architecture overview", "path": "/architecture/overview" },
+        { "title": "Migration pipeline", "path": "/architecture/migration-pipeline" },
+        { "title": "ShadowGate internals", "path": "/architecture/shadow-gate" },
+        { "title": "Manifest contract", "path": "/architecture/manifest-contract" },
+        { "title": "ADR", "path": "/architecture/decisions" }
+      ]
+    },
+    {
+      "title": "Best Practices",
+      "icon": "lightbulb",
+      "children": [
+        { "title": "Safe migration", "path": "/best-practices/safe-migration" },
+        { "title": "Naming & mapping hygiene", "path": "/best-practices/naming-and-mapping" }
+      ]
+    },
+    {
+      "title": "Operations",
+      "icon": "settings",
+      "children": [
+        { "title": "Configuration", "path": "/operations/configuration" },
+        { "title": "Observability & mismatch logs", "path": "/operations/observability" },
+        { "title": "Troubleshooting", "path": "/operations/troubleshooting" }
+      ]
+    },
+    {
+      "title": "Reference",
+      "icon": "book-marked",
+      "children": [
+        { "title": "CLI reference", "path": "/reference/cli" },
+        { "title": "PHP API", "path": "/reference/php-api" },
+        { "title": "Manifest schema", "path": "/reference/manifest-schema" }
+      ]
+    },
+    {
+      "title": "Links",
+      "children": [
+        { "title": "GitHub", "path": "https://github.com/padosoft/laravel-iam-bridge-spatie-permission", "external": true },
+        { "title": "Packagist", "path": "https://packagist.org/packages/padosoft/laravel-iam-bridge-spatie-permission", "external": true }
+      ]
+    }
+  ],
+
+  "footer": {
+    "style": "minimal",
+    "branding": true,
+    "content": "© Lorenzo Padovani — [Padosoft](https://github.com/padosoft) · [GitHub](https://github.com/padosoft/laravel-iam-bridge-spatie-permission) · MIT",
+    "columns": [
+      {
+        "title": "Project",
+        "links": [
+          { "title": "GitHub", "path": "https://github.com/padosoft/laravel-iam-bridge-spatie-permission", "external": true },
+          { "title": "Packagist", "path": "https://packagist.org/packages/padosoft/laravel-iam-bridge-spatie-permission", "external": true }
+        ]
+      },
+      {
+        "title": "Author",
+        "links": [
+          { "title": "Lorenzo Padovani", "path": "https://github.com/padosoft", "external": true },
+          { "title": "Padosoft", "path": "https://github.com/padosoft", "external": true }
+        ]
+      }
+    ]
+  },
+
+  "plugins": {
+    "search": { "enabled": true, "semantic": true, "placeholder": "Search the docs…" },
+    "git": {
+      "repo": "https://github.com/padosoft/laravel-iam-bridge-spatie-permission",
+      "branch": "main",
+      "editLink": true,
+      "lastUpdated": true,
+      "commitHistory": true,
+      "dateFormat": "relative"
+    },
+    "seo": {
+      "defaultDescription": "Bridge di migrazione da spatie/laravel-permission a Laravel IAM: scan read-only, manifest v2, shadow mode, decision diffing, cutover e rollback.",
+      "aiBots": true,
+      "openGraph": {},
+      "twitter": { "cardType": "summary_large_image" }
+    },
+    "sitemap": { "defaultChangefreq": "weekly", "defaultPriority": 0.8 },
+    "mermaid": {},
+    "math": {},
+    "llms": { "fullContext": true },
+    "analytics": { "enabled": false }
+  }
+}

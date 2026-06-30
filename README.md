@@ -18,6 +18,10 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="License"></a>
 </p>
 
+<p align="center">
+  <strong>📖 Full documentation: <a href="https://doc.laravel-iam-bridge-spatie-permission.padosoft.com">doc.laravel-iam-bridge-spatie-permission.padosoft.com</a></strong>
+</p>
+
 ---
 
 ## Why this package
@@ -150,9 +154,19 @@ deciding, instantly.
 
 ## Documentation
 
-A docmd doc-site lives in [`docs/`](docs/): start at [`docs/index.md`](docs/index.md), then
-[Getting started](docs/getting-started.md), [Concepts](docs/concepts.md), the step-by-step
-[Migration runbook](docs/migration-runbook.md), and the [Reference](docs/reference.md).
+The full documentation site (25+ pages: guides, concepts & theory, architecture, ADRs, operations, and a
+complete CLI/PHP/manifest reference) is published at
+**[doc.laravel-iam-bridge-spatie-permission.padosoft.com](https://doc.laravel-iam-bridge-spatie-permission.padosoft.com)**
+and its source lives in [`docs-site/`](docs-site/).
+
+Highlights:
+
+- [Quickstart](https://doc.laravel-iam-bridge-spatie-permission.padosoft.com/quickstart) — the whole loop in one page.
+- [Core concepts](https://doc.laravel-iam-bridge-spatie-permission.padosoft.com/core-concepts) and
+  [Shadow before cutover](https://doc.laravel-iam-bridge-spatie-permission.padosoft.com/concepts/shadow-before-cutover).
+- [Migration pipeline](https://doc.laravel-iam-bridge-spatie-permission.padosoft.com/architecture/migration-pipeline)
+  and [ShadowGate internals](https://doc.laravel-iam-bridge-spatie-permission.padosoft.com/architecture/shadow-gate).
+- [CLI reference](https://doc.laravel-iam-bridge-spatie-permission.padosoft.com/reference/cli).
 
 ## Security
 

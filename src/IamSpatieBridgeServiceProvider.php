@@ -9,6 +9,7 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Database\ConnectionResolverInterface;
 use Padosoft\Iam\Bridge\Spatie\Console\SpatieManifestCommand;
 use Padosoft\Iam\Bridge\Spatie\Console\SpatieScanCommand;
+use Padosoft\Iam\Bridge\Spatie\Console\SpatieSyncCommand;
 use Padosoft\Iam\Bridge\Spatie\Migration\ManifestGenerator;
 use Padosoft\Iam\Bridge\Spatie\Migration\PermissionMapper;
 use Padosoft\Iam\Bridge\Spatie\Migration\SpatieScanner;
@@ -32,7 +33,7 @@ final class IamSpatieBridgeServiceProvider extends PackageServiceProvider
         $package
             ->name('laravel-iam-bridge-spatie-permission')
             ->hasConfigFile('iam-spatie')
-            ->hasCommands([SpatieScanCommand::class, SpatieManifestCommand::class]);
+            ->hasCommands([SpatieScanCommand::class, SpatieManifestCommand::class, SpatieSyncCommand::class]);
     }
 
     public function packageRegistered(): void

@@ -51,6 +51,9 @@ You cut over on **evidence**, not hope.
   permissions, direct user grants, multiple guards.
 - **`iam:spatie:manifest`** — generate a `laravel-iam.manifest.v2` from the inventory
   (`ManifestGenerator`), ready for `iam:manifest:validate` / `iam:app:register`.
+- **`iam:spatie:sync`** — regenerate the manifest from the CURRENT spatie state **and sync it to IAM** in one
+  shot (diff → apply additive changes, or submit gated ones for approval). Schedule it for hands-off drift-sync;
+  removed roles/permissions are **deprecated** (kept for history, disabled), not deleted.
 - **`PermissionMapper`** — deterministic, idempotent slugging of Spatie names (`"orders.refund"`,
   `"Manage Users"`) to IAM keys (`^[a-z][a-z0-9_.-]*$`); two names that collapse to the same key surface a
   semantic duplicate to review. Includes a starting `risk` heuristic for high-impact actions.
@@ -110,6 +113,32 @@ The manifest is a **proposal**: review the inferred `risk` levels and roles, the
 php artisan iam:manifest:validate storage/app/iam/iam.manifest.json
 php artisan iam:app:register      storage/app/iam/iam.manifest.json
 ```
+
+### Keeping IAM in sync as your roles/permissions change
+
+After the first registration, your spatie roles/permissions keep evolving. You don't hand-edit the manifest
+every time — **`iam:spatie:sync`** regenerates it from the current spatie state and pushes it to IAM in one
+step:
+
+```bash
+# see what would change (no writes)
+php artisan iam:spatie:sync --app=billing --dry-run
+
+# additive changes (new roles/permissions) apply straight away; a removal is gated → --approve applies it
+php artisan iam:spatie:sync --app=billing --approve
+```
+
+Schedule it for hands-off drift-sync (host `routes/console.php`):
+
+```php
+Schedule::command('iam:spatie:sync --app=billing --approve')->hourly();
+```
+
+**What happens to a removed role or permission?** IAM never hard-deletes it. It is **deprecated** — the row
+stays (full history + audit intact) but is **disabled**: it can no longer be granted or satisfy a decision.
+Re-adding the same key in a later sync **re-activates** it. This is safe by design: you keep the record and
+can prove who could do what, when. (See
+[Keeping IAM in sync](https://doc.laravel-iam-server.padosoft.com/guides/keeping-in-sync).)
 
 ### 3. Observe in shadow
 
